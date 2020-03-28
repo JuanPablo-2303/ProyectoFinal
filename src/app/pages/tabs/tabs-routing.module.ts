@@ -38,6 +38,26 @@ const routes: Routes = [
           }
         ]
       },
+      {
+        path: 'home',
+        children:[
+          {
+            path: '',
+            loadChildren: () =>
+              import('../home/home.module').then(m => m.HomePageModule)
+          }
+        ]
+      },
+      {
+        path: 'map',
+        children:[
+          {
+            path: '',
+            loadChildren: () =>
+              import('../map/map.module').then(m => m.MapPageModule)
+          }
+        ]
+      },
     ]
   }
 ];
